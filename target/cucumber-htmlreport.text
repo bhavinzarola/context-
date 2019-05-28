@@ -1,0 +1,61 @@
+Feature: Upload files feature
+
+  @test
+  Scenario Outline: User should be able to upload files # src/test/Resources/ContextIs/UploadFiles.feature:6
+    Given User is on homepage
+    When User navigates to login page
+    And User enters "<username>" and "<password>"
+    And User clicks on Login
+    And User clicks on upload
+    And User clicks on choose file
+    And User selects a file
+    And User clicks on upload file
+    Then User should be directed to welcome page
+
+    Examples: 
+
+  Background: User is on contextis.pythonanywhere.com # src/test/Resources/ContextIs/UploadFiles.feature:3
+
+  @test
+  Scenario Outline: User should be able to upload files # src/test/Resources/ContextIs/UploadFiles.feature:18
+    Given User is on homepage                           # MyStepDefs.user_is_on_homepage()
+    When User navigates to login page                   # MyStepDefs.user_navigates_to_login_page()
+    And User enters "user" and "password"               # MyStepDefs.user_enters_and(String,String)
+    And User clicks on Login                            # MyStepDefs.user_clicks_on_Login()
+    And User clicks on upload                           # MyStepDefs.user_clicks_on_upload()
+    And User clicks on choose file                      # MyStepDefs.user_clicks_on_choose_file()
+    And User selects a file                             # MyStepDefs.user_selects_a_file()
+    And User clicks on upload file                      # MyStepDefs.user_clicks_on_upload_file()
+    Then User should be directed to welcome page        # MyStepDefs.user_should_be_directed_to_welcome_page()
+      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"[class='container']>h1"}
+        (Session info: chrome=74.0.3729.169)
+        (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+      Command duration or timeout: 0 milliseconds
+      For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+      Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+      System info: host: 'WELCOME-PC', ip: '10.30.0.139', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_191'
+      Driver info: org.openqa.selenium.chrome.ChromeDriver
+      Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 74.0.3729.6 (255758eccf3d24..., userDataDir: C:\Users\Welcome\AppData\Lo...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:52407}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 74.0.3729.169, webStorageEnabled: true}
+      Session ID: 31dcb6ddd1294f5a07bf8fdc40a1fa88
+      *** Element info: {Using=css selector, value=[class='container']>h1}
+      	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+      	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+      	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+      	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+      	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+      	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+      	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+      	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+      	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+      	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+      	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+      	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+      	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+      	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
+      	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
+      	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+      	at ContextIs.Utils.assertTextOfElement(Utils.java:50)
+      	at PageObjects.WelcomePage.verifyFileIsSuccessfullyUploaded(WelcomePage.java:50)
+      	at ContextIs.MyStepDefs.user_should_be_directed_to_welcome_page(MyStepDefs.java:58)
+      	at ✽.Then User should be directed to welcome page(src/test/Resources/ContextIs/UploadFiles.feature:15)
+
